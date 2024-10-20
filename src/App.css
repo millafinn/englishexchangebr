@@ -7,7 +7,6 @@
   min-height: 100vh;   
 }
 
-
 /* Navbar */
 .navbar {
   display: flex;
@@ -38,7 +37,6 @@
   color: #19018f;
   font-size: 1rem;
 }
-
 
 /* Seção Hero (Home) */
 .hero-section {
@@ -81,3 +79,63 @@
   padding: 10px;
   font-size: 1.2rem;
 }
+
+/* Seção Sobre */
+.about-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  text-align: center;
+  min-height: 100vh; 
+}
+
+.about-section h2 {
+  color: #19018f;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #333;
+}
+
+/* Seção Serviços */
+.services-section {
+  padding: 40px;
+  text-align: center; 
+  min-height: 100vh; 
+  background-color: #f9f9f9; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.services-section h2 {
+  color: #19018f;
+  margin-bottom: 30px; 
+  font-size: 2rem; 
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  max-width: 900px; 
+  margin: 0 auto; 
+}
+
+.services-list p {
+  text-align: justify; 
+  line-height: 1.6; 
+  margin: 20px 0; 
+  color: #333;
+  font-size: 1.1rem; 
+}
+
+.services-list p strong {
+  display: block; 
+  margin-top: 15px; 
+  margin-bottom: 5px; 
+  font-size: 1.2rem; 
+  color: #19018f; 
+}
+
+
