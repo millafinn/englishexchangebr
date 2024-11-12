@@ -13,17 +13,20 @@
   justify-content: space-between;
   align-items: center;
   margin-right: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f44336; /* Cor de fundo vermelho */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombreamento para o menu fixo */
+  z-index: 1000;
 }
 
-.logo img {
-  max-width: 50px;
-  height: auto;
-  margin-right: 10px;
+.navbar-fixed .nav-links li a {
+  color: white; /* Define a cor da fonte como branca quando fixo */
 }
 
 .nav-links {
@@ -34,8 +37,9 @@
 
 .nav-links li a {
   text-decoration: none;
-  color: #19018f;
+  color: #19018f; /* Cor padrão do link */
   font-size: 1rem;
+  transition: color 0.3s ease; /* Transição suave para a mudança de cor */
 }
 
 /* Seção Hero (Home) */
@@ -79,6 +83,7 @@
   padding: 10px;
   font-size: 1.2rem;
 }
+
 
 /* Seção Sobre */
 .about-section {
@@ -141,58 +146,74 @@
 
 /* Seção Professores */
 .teachers-section {
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 40px;
-  background-color: #f9f9f9; 
-  min-height: 100vh; 
+  background-color: #f9f9f9;
+  min-height: 100vh;
 }
 
 .teachers-section h2 {
-  color: #19018f; 
-  margin-bottom: 20px; 
+  color: #19018f;
+  margin-bottom: 20px;
 }
 
 .teachers-container {
-  display: flex; 
-  justify-content: center; 
-  flex-wrap: wrap; 
-  gap: 20px; 
-  margin-top: 20px; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .teacher-card {
-  background-color: #fff; 
-  padding: 20px; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  flex: 1 1 250px; 
-  max-width: 300px; 
-  text-align: center; 
-  transition: transform 0.3s; 
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s;
 }
 
 .teacher-card:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 .teacher-photo {
-  width: 100%; 
-  border-radius: 50%; 
-  margin-bottom: 15px; 
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
 
 .teacher-card h3 {
-  color: #19018f; 
-  margin-bottom: 10px; 
+  color: #19018f;
+  margin-bottom: 10px;
 }
 
 .teacher-card p {
-  color: #333; 
-  line-height: 1.5; 
+  color: #333;
+  line-height: 1.5;
 }
 
+/* Seção Fórum */
+.forum-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.forum-section h2 {
+  color: #19018f;
+  margin-bottom: 20px;
+}
+
+.forum-section p {
+  color: #333;
+}
 
 

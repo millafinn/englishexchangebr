@@ -1,28 +1,49 @@
 import './App.css';
+import { useEffect, useState } from 'react';
+import myllena from './myllena.jpg';
+import pedro from './pedro.jpg';
+import juliana from './juliana.jpg';
+
 
 function App() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.getElementById('home');
+      if (window.scrollY > heroSection.clientHeight) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="App">
       <header className='banner-container'>
-        <nav className="navbar">
+        <nav className={`navbar ${isScrolled ? 'navbar-fixed' : ''}`}>
           <ul className="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">Sobre</a></li>
             <li><a href="#services">Serviços</a></li>
             <li><a href="#teachers">Professores</a></li>
-            <li><a href="#contact">Contatos</a></li>
             <li><a href="#forum">Fórum</a></li>
+            <li><a href="#contact">Contatos</a></li>            
           </ul>        
         </nav>
 
         <section id="home" className="hero-section">
           <div className="hero-content">            
             <h1>English <span style={{ color: '#f44336' }}>Exchange</span></h1>
-            <p> Fale com a teacher Myllena e aumente suas oportunidades de carreira.</p>
-            <button className="enrol-btn">Enrol Now</button>
+            <p> Fale com a teacher Myllena e aumente suas oportunidades de carreira.</p>            
             <div className="admission-open">
-              <span>Faça sua aula experimental!</span>
+              <span>Teste seu nivelamento!</span>
             </div>
+            <button className="enrol-btn">Clique aqui</button>
           </div>
         </section>
       </header>
@@ -60,32 +81,39 @@ function App() {
 
       {/* Seção Professores */}
       <section id="teachers" className="teachers-section">
-        <h2>Conheça Nossos Professores Parceiros</h2>
-        <div className="teachers-container">
-          {/* Card Teacher Myllena */}
-          <div className="teacher-card">
-            <img src="./myllena.jpg" alt="Teacher Myllena" className="teacher-photo" />
-            <h3>Teacher Myllena</h3>
-            <p>Especialista em aulas particulares com foco em conversação e fluência. Mais de 10 anos de experiência no ensino de inglês para todos os níveis.</p>
-          </div>
+  <h2>Conheça Nossos Professores Parceiros</h2>
+  <div className="teachers-container">
+    {/* Card Teacher Myllena */}
+    <div className="teacher-card">
+      <img src={myllena} alt="Teacher Myllena" className="teacher-photo" />
+      <h3>Teacher Myllena</h3>
+      <p>Especialista em aulas particulares com foco em conversação e fluência. Mais de 10 anos de experiência no ensino de inglês para todos os níveis.</p>
+    </div>
 
-          {/* Card Teacher Pedro */}
-          <div className="teacher-card">
-            <img src="./pedro.jpg" alt="Teacher Pedro" className="teacher-photo" />
-            <h3>Teacher Pedro</h3>
-            <p>Instrutor de inglês especializado em preparatórios para exames internacionais e desenvolvimento de habilidades acadêmicas.</p>
-          </div>
+    {/* Card Teacher Pedro */}
+    <div className="teacher-card">
+      <img src={pedro} alt="Teacher Pedro" className="teacher-photo" />
+      <h3>Teacher Pedro</h3>
+      <p>Instrutor de inglês especializado em preparatórios para exames internacionais e desenvolvimento de habilidades acadêmicas.</p>
+    </div>
 
-          {/* Card Teacher Juliana */}
-          <div className="teacher-card">
-            <img src="./juliana.jpg" alt="Teacher Juliana" className="teacher-photo" />
-            <h3>Teacher Juliana</h3>
-            <p>Professora com foco em ensino de inglês para iniciantes e uso de métodos interativos para aulas dinâmicas e divertidas.</p>
-          </div>
-        </div>
+    {/* Card Teacher Juliana */}
+    <div className="teacher-card">
+      <img src={juliana} alt="Teacher Juliana" className="teacher-photo" />
+      <h3>Teacher Juliana</h3>
+      <p>Professora com foco em ensino de inglês para iniciantes e uso de métodos interativos para aulas dinâmicas e divertidas.</p>
+    </div>
+  </div>
+</section>
+
+      {/* Seção Fórum */}
+      <section id="forum" className="forum-section">
+        <h2>Fórum</h2>
+        <p>Participe da nossa comunidade! Faça perguntas, compartilhe experiências e interaja com outros alunos.</p>
+        <button className="enrol-btn">Acesse o Fórum</button>
       </section>
 
-      
+     
     </div>
   );
 }
