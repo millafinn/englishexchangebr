@@ -1,6 +1,4 @@
 import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
   return (
@@ -58,6 +56,33 @@ function App() {
             Junte-se a nós e descubra como nossos serviços podem transformar sua experiência de aprendizado de inglês. Estamos aqui para apoiar você e sua família a alcançarem seus objetivos!
         </p>
         </ul>
+      </section>
+
+      {/* Seção Professores */}
+      <section id="teachers" className="teachers-section">
+        <h2>Conheça Nossos Professores Parceiros</h2>
+        <div className="teachers-container">
+          {/* Card Teacher Myllena */}
+          <div className="teacher-card">
+            <img src="./myllena.jpg" alt="Teacher Myllena" className="teacher-photo" />
+            <h3>Teacher Myllena</h3>
+            <p>Especialista em aulas particulares com foco em conversação e fluência. Mais de 10 anos de experiência no ensino de inglês para todos os níveis.</p>
+          </div>
+
+          {/* Card Teacher Pedro */}
+          <div className="teacher-card">
+            <img src="./pedro.jpg" alt="Teacher Pedro" className="teacher-photo" />
+            <h3>Teacher Pedro</h3>
+            <p>Instrutor de inglês especializado em preparatórios para exames internacionais e desenvolvimento de habilidades acadêmicas.</p>
+          </div>
+
+          {/* Card Teacher Juliana */}
+          <div className="teacher-card">
+            <img src="./juliana.jpg" alt="Teacher Juliana" className="teacher-photo" />
+            <h3>Teacher Juliana</h3>
+            <p>Professora com foco em ensino de inglês para iniciantes e uso de métodos interativos para aulas dinâmicas e divertidas.</p>
+          </div>
+        </div>
       </section>
 
       
