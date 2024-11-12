@@ -1,5 +1,6 @@
 import './App.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
   return (
@@ -28,22 +29,37 @@ function App() {
         </section>
       </header>
 
-
+      {/* Seção Sobre */}
       <section id="about" className="about-section">
-  <div className="about-content">
-    <h2>Sobre o English Exchange</h2>
-    <p>
-      O English Exchange é um curso focado em proporcionar uma experiência de aprendizado dinâmica e interativa. 
-      Com uma metodologia prática, conduzida pela professora Myllena, o curso é ideal para quem deseja expandir suas 
-      habilidades no inglês e abrir novas oportunidades de carreira.
-    </p>
-    <p>
-      Myllena é uma professora dedicada, com anos de experiência em ensinar inglês a alunos de diferentes níveis. 
-      Sua missão é ajudar você a alcançar fluência e confiança ao se comunicar em inglês. Faça parte do English Exchange 
-      e avance no seu aprendizado!
-    </p>
-  </div>
-</section>
+        <h2>Sobre o Curso</h2>
+        <p>Na English Exchange, fundada pela experiente teacher Myllena, as aulas particulares são desenhadas para atender às necessidades únicas de cada aluno.
+                Aplicamos o Método Mabi, uma abordagem pedagógica avançada que enriquece o processo de aprendizado, promovendo resultados efetivos e um domínio aprimorado do inglês.
+                Nossa missão é oferecer um ensino personalizado e de alta qualidade, com foco na fluência e confiança no inglês. Utilizamos recursos didáticos modernos e técnicas inovadoras para criar um ambiente de aprendizado estimulante e eficaz.
+                Escolher as aulas particulares da English Exchange é optar por um caminho para o sucesso no inglês, com um atendimento dedicado e uma experiência educacional sob medida.</p>
+      </section>
+
+      {/* Seção Serviços */}
+      <section id="services" className="services-section">
+        <h2>Nossos Serviços</h2>
+        <ul className="services-list">
+           <p>           
+            No nosso curso de inglês, acreditamos que aprender deve ser uma experiência enriquecedora e acessível a todos. Por isso, oferecemos uma ampla gama de serviços para atender às suas necessidades.
+            <br /><br />
+            <strong>Suporte Escolar:</strong> Entendemos que o aprendizado do inglês pode ser desafiador, especialmente no ambiente escolar. Por isso, disponibilizamos suporte personalizado para estudantes, com aulas de reforço, tutoriais e materiais didáticos que ajudam a solidificar o conhecimento e a aumentar a confiança. Nossa equipe de professores qualificados está sempre pronta para oferecer a orientação necessária para que cada aluno alcance seu potencial.
+            <br /><br />
+            <strong>Aulas Individuais e em Grupo:</strong> Oferecemos flexibilidade nas modalidades de ensino. Você pode optar por aulas individuais, que garantem atenção personalizada, ou participar de aulas em grupo, onde a interação com outros alunos enriquece o aprendizado e torna a experiência mais divertida.
+            <br /><br />            
+            <strong>Aulas de Conversação:</strong> A fluência em inglês vai além da gramática; é preciso praticar a conversação. Nossas aulas de conversação são dinâmicas e voltadas para desenvolver a habilidade de se comunicar com confiança em diversas situações do dia a dia.
+            <br /><br />
+            <strong>Atividades Interativas e Dinâmicas:</strong> Aprender deve ser divertido! Por isso, incorporamos atividades interativas e dinâmicas em nosso currículo, tornando o aprendizado mais envolvente e eficaz. Com jogos, debates e exercícios práticos, garantimos que você aprenda de maneira leve e prazerosa.
+            <br /><br />
+            <strong>Promoções para Familiares:</strong> Aprender em família é uma experiência única e motivadora! Pensando nisso, oferecemos promoções especiais para familiares que desejam se inscrever juntos em nosso curso. Com condições exclusivas e descontos atraentes, você e seus entes queridos poderão embarcar nessa jornada de aprendizado juntos, tornando o processo mais divertido e interativo.
+            <br /><br />
+            Junte-se a nós e descubra como nossos serviços podem transformar sua experiência de aprendizado de inglês. Estamos aqui para apoiar você e sua família a alcançarem seus objetivos!
+        </p>
+        </ul>
+      </section>
+
       
     </div>
   );

@@ -80,26 +80,62 @@
   font-size: 1.2rem;
 }
 
-
-/* Seção Sobre (About) */
+/* Seção Sobre */
 .about-section {
-  padding: 50px;
+  padding: 40px;
   background-color: #f9f9f9;
-  color: #333;
   text-align: center;
+  min-height: 100vh; 
 }
 
-.about-content h2 {
-  font-size: 2.5rem;
+.about-section h2 {
   color: #19018f;
   margin-bottom: 20px;
-  font-family: 'Bangers', cursive;
 }
 
-.about-content p {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  max-width: 800px;
+.about-section p {
+  max-width: 600px;
   margin: 0 auto;
+  color: #333;
 }
+
+/* Seção Serviços */
+.services-section {
+  padding: 40px;
+  text-align: center; /* Centraliza o texto dentro da seção */
+  min-height: 100vh; 
+  background-color: #f9f9f9; /* Cor de fundo suave */
+  border-radius: 10px; /* Cantos arredondados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.services-section h2 {
+  color: #19018f;
+  margin-bottom: 30px; /* Aumenta o espaço abaixo do título */
+  font-size: 2rem; /* Aumenta o tamanho da fonte do título */
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  max-width: 900px; /* Limita a largura da lista */
+  margin: 0 auto; /* Centraliza a lista na seção */
+}
+
+.services-list p {
+  text-align: justify; /* Justifica o texto */
+  line-height: 1.6; /* Espaçamento entre linhas */
+  margin: 20px 0; /* Adiciona margem acima e abaixo dos parágrafos */
+  color: #333; /* Cor do texto */
+  font-size: 1.1rem; /* Aumenta o tamanho da fonte */
+}
+
+.services-list p strong {
+  display: block; /* Faz o texto em negrito começar em uma nova linha */
+  margin-top: 15px; /* Espaço acima do texto em negrito */
+  margin-bottom: 5px; /* Espaço abaixo do texto em negrito */
+  font-size: 1.2rem; /* Tamanho da fonte em negrito */
+  color: #19018f; /* Cor do texto em negrito */
+}
+
 
