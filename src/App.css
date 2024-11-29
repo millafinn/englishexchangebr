@@ -20,13 +20,13 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #f44336; /* Cor de fundo vermelho */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombreamento para o menu fixo */
+  background-color: #f44336; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   z-index: 1000;
 }
 
 .navbar-fixed .nav-links li a {
-  color: white; /* Define a cor da fonte como branca quando fixo */
+  color: white; 
 }
 
 .nav-links {
@@ -37,9 +37,9 @@
 
 .nav-links li a {
   text-decoration: none;
-  color: #19018f; /* Cor padrão do link */
+  color: #19018f; 
   font-size: 1rem;
-  transition: color 0.3s ease; /* Transição suave para a mudança de cor */
+  transition: color 0.3s ease; 
 }
 
 /* Seção Hero (Home) */
@@ -201,6 +201,25 @@
   line-height: 1.5;
 }
 
+
+
+/* Seção Contato */
+.contact-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  text-align: center;
+  min-height: 100vh; 
+}
+
+.contact-section h2 {
+  color: #19018f;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  margin-top: 20px;
+}
+
 /* Seção Fórum */
 .forum-section {
   padding: 40px;
@@ -215,5 +234,94 @@
 .forum-section p {
   color: #333;
 }
+
+/* Seção Contatos */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.map-container {
+  flex: 1;
+  margin-right: 20px; 
+}
+
+.contact-form {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contact-form h3 {
+  color: #19018f;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.contact-form button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* .social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px; 
+  color: #19018f; 
+}
+ */
+
+/* Footer */
+.footer {
+  background-color: #19018f;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  padding: 0 20px;
+}
+
+.social-icons {
+  margin-top: 10px;
+  text-align: center; 
+}
+
+.social-icons a {
+  margin: 0 10px; 
+  color: #fff; 
+  transition: color 0.3s; 
+}
+
+.social-icons a:hover {
+  color: #f44336; 
+}
+
 
 
