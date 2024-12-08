@@ -145,7 +145,7 @@ function NivelamentoTest() {
   const [error, setError] = useState(false);
 
   const handleBackClick = () => {
-    window.location.href = "/"; // Redireciona para a página inicial
+    window.location.href = "/"; 
   };
 
   const handleChange = (event) => {
@@ -153,7 +153,7 @@ function NivelamentoTest() {
     const updatedResponses = [...responses];
     updatedResponses[currentQuestion] = value;
     setResponses(updatedResponses);
-    setError(false); // Limpa o erro ao selecionar uma resposta
+    setError(false); 
   };
 
   const handleNext = () => {
