@@ -1,10 +1,15 @@
 /* Banner - Fundo */
 .banner-container {
-  background-image: url('./fundos.png');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  min-height: 100vh;   
+  min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+  .banner-container {
+    background-image: url('./fundos.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 /* Navbar */
@@ -14,19 +19,39 @@
   align-items: center;
   margin-right: 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar-fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
   background-color: #f44336; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  z-index: 1000;
+  padding: 10px; 
+  z-index: 1000; 
 }
 
-.navbar-fixed .nav-links li a {
-  color: white; 
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger-menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: #19018f;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger-menu .line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu .line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu .line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 .nav-links {
@@ -37,9 +62,38 @@
 
 .nav-links li a {
   text-decoration: none;
-  color: #19018f; 
+  color: white; 
   font-size: 1rem;
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
+}
+
+.nav-links.open {
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: #f44336; 
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links.open li a {
+  color: white; 
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
 }
 
 /* Seção Hero (Home) */
@@ -48,6 +102,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 50px;
+  margin-top: 60px; 
 }
 
 .hero-content {
@@ -74,6 +129,12 @@
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
+  margin-top: 20px; 
+}
+
+.enrol-btn:hover{
+  background-color: #19018f;
+  color: white;
 }
 
 .admission-open {
@@ -84,13 +145,13 @@
   font-size: 1.2rem;
 }
 
-
 /* Seção Sobre */
 .about-section {
-  padding: 40px;
+  padding: 80px 40px; 
   background-color: #f9f9f9;
   text-align: center;
   min-height: 100vh; 
+  margin-top: 60px; 
 }
 
 .about-section h2 {
@@ -106,12 +167,13 @@
 
 /* Seção Serviços */
 .services-section {
-  padding: 40px;
+  padding: 80px 40px;
   text-align: center; 
   min-height: 100vh; 
   background-color: #f9f9f9; 
   border-radius: 10px; 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+  margin-top: 60px; 
 }
 
 .services-section h2 {
@@ -143,16 +205,16 @@
   color: #19018f; 
 }
 
-
 /* Seção Professores */
 .teachers-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 80px 40px; 
   background-color: #f9f9f9;
   min-height: 100vh;
+  margin-top: 60px; 
 }
 
 .teachers-section h2 {
@@ -201,14 +263,13 @@
   line-height: 1.5;
 }
 
-
-
 /* Seção Contato */
 .contact-section {
-  padding: 40px;
+  padding: 80px 40px; 
   background-color: #f9f9f9;
   text-align: center;
   min-height: 100vh; 
+  margin-top: 60px; 
 }
 
 .contact-section h2 {
@@ -216,26 +277,6 @@
   margin-bottom: 20px;
 }
 
-.map-container {
-  margin-top: 20px;
-}
-
-/* Seção Fórum */
-.forum-section {
-  padding: 40px;
-  text-align: center;
-}
-
-.forum-section h2 {
-  color: #19018f;
-  margin-bottom: 20px;
-}
-
-.forum-section p {
-  color: #333;
-}
-
-/* Seção Contatos */
 .contact-container {
   display: flex;
   justify-content: space-between;
@@ -281,87 +322,55 @@
   cursor: pointer;
 }
 
-/* .social-icons {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; 
+    padding: 20px; 
+  }
+
+  .map-container {
+    margin-right: 0; 
+    margin-bottom: 20px; 
+  }
 }
 
-.social-icons a {
-  margin: 0 10px; 
-  color: #19018f; 
+/* Seção Fórum */
+.forum-section {
+  padding: 60px 40px; 
+  text-align: center; 
+  min-height: 100vh; 
+  background-color: #f9f9f9; 
+  margin-top: 60px; 
 }
- */
+
+.forum-section h2 {
+  color: #19018f;
+  margin-bottom: 20px;
+}
 
 /* Footer */
 .footer {
-  background-color: #19018f;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
+  background-color: #f44336; 
+  color: white; 
+  padding: 20px 0; 
+  text-align: center; 
+  margin-top: 60px; 
 }
 
 .footer-content {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
 }
 
-.social-icons {
-  margin-top: 10px;
-  text-align: center; 
-}
-
-.social-icons a {
+.footer-content p {
   margin: 0 10px; 
-  color: #fff; 
-  transition: color 0.3s; 
 }
 
-.social-icons a:hover {
-  color: #f44336; 
-}
-
-
-
-/* ======================================================= */
-
-
-
-.test-container {
-  margin: 2rem auto;
-  padding: 1.5rem;
-  text-align: center;
-  background: #f9f9f9;
-  border-radius: 8px;
-  max-width: 600px;
-}
-
-.question-section {
-  margin-bottom: 1rem;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.option-btn {
-  padding: 10px 20px;
-  background: #f44336;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.option-btn:hover {
-  background: #d32f2f;
-}
-
-.results {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; 
+  }
 }

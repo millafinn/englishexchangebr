@@ -1,54 +1,75 @@
-import './App.css';
-import { useEffect, useState } from 'react';
-import myllena from './myllena.jpg';
-import pedro from './pedro.jpg';
-import juliana from './juliana.jpg';
+import './App.css'; 
+import { useEffect, useState } from 'react'; 
+import myllena from './myllena.jpg'; 
+import pedro from './pedro.jpg'; 
+import juliana from './juliana.jpg'; 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'; 
+import NivelamentoTest from './NivelamentoTest'; 
 
-function App() {
-  const [isScrolled, setIsScrolled] = useState(false);
+function App() { 
+  const [isScrolled, setIsScrolled] = useState(false); 
+  const [showTest, setShowTest] = useState(false); 
+  const [menuOpen, setMenuOpen] = useState(false); 
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.getElementById('home');
-      if (window.scrollY > heroSection.clientHeight) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+  useEffect(() => { 
+    const handleScroll = () => { 
+      const heroSection = document.getElementById('home'); 
+      if (heroSection && window.scrollY > heroSection.clientHeight) { 
+        setIsScrolled(true); 
+      } else { 
+        setIsScrolled(false); 
+      } 
+    }; 
+  
+    window.addEventListener('scroll', handleScroll); 
+    return () => window.removeEventListener('scroll', handleScroll); 
+  }, []); 
+  
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleTestClick = () => { 
+    setShowTest(true); 
+  }; 
 
-  return (
-    <div className="App">
-      <header className='banner-container'>
-        <nav className={`navbar ${isScrolled ? 'navbar-fixed' : ''}`}>
-          <ul className="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#services">Serviços</a></li>
-            <li><a href="#teachers">Professores</a></li>
-            <li><a href="#forum">Fórum</a></li>
-            <li><a href="#contact">Contatos</a></li>            
-          </ul>        
-        </nav>
+  const toggleMenu = () => { 
+    setMenuOpen(!menuOpen); 
+  }; 
 
-        <section id="home" className="hero-section">
-          <div className="hero-content">            
-            <h1>English <span style={{ color: '#f44336' }}>Exchange</span></h1>
-            <p> Fale com a teacher Myllena e aumente suas oportunidades de carreira.</p>            
-            <div className="admission-open">
-              <span>Teste seu nivelamento!</span>
-            </div>
-            <button className="enrol-btn">Clique aqui</button>
-          </div>
-        </section>
-      </header>
+  if (showTest) { 
+    return <NivelamentoTest />; 
+  } 
+
+  return ( 
+    <div className="App"> 
+      <header className="banner-container"> 
+        <nav className={`navbar ${isScrolled ? 'navbar-fixed' : ''}`}> 
+          <div className="hamburger-menu" onClick={toggleMenu}> 
+            <div className={`line ${menuOpen ? 'open' : ''}`}></div> 
+            <div className={`line ${menuOpen ? 'open' : ''}`}></div> 
+            <div className={`line ${menuOpen ? 'open' : ''}`}></div> 
+          </div> 
+          <ul className={`nav-links ${menuOpen ? 'open' : ''}`}> 
+            <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li> 
+            <li><a href="#about" onClick={() => setMenuOpen(false)}>Sobre</a></li> 
+            <li><a href="#services" onClick={() => setMenuOpen(false)}>Serviços</a></li> 
+            <li><a href="#teachers" onClick={() => setMenuOpen(false)}>Professores</a></li> 
+            <li><a href="#forum" onClick={() => setMenuOpen(false)}>Fórum</a></li> 
+            <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contatos</a></li> 
+          </ul> 
+        </nav> 
+
+        <section id="home" className="hero-section"> 
+          <div className="hero-content"> 
+            <h1>English <span style={{ color: '#f44336' }}>Exchange</span></h1> 
+            <p>Fale com a teacher Myllena e aumente suas oportunidades de carreira.</p> 
+            <div className="admission-open"> 
+              <span>Teste seu nivelamento!</span> 
+            </div> 
+            <button className="enrol-btn" onClick={handleTestClick}>Clique aqui</button> 
+          </div> 
+        </section> 
+      </header> 
 
       {/* Seção Sobre */}
       <section id="about" className="about-section">
@@ -124,49 +145,39 @@ function App() {
             <iframe
               title="Localização"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.808082119985!2d-43.33113992469247!3d-22.80957417932371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997b32db526311%3A0x1830eb6aeb660689!2sR.%20Prof.%20Costa%20Ribeiro%2C%20320%20-%20Jardim%20Am%C3%A9rica%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2021240-290!5e0!3m2!1spt-BR!2sbr!4v1729210516885!5m2!1spt-BR!2sbr"
-              width="100%"
-              height="300"
+              width="600"
+              height="450"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
             ></iframe>
           </div>
-          
-          {/* Formulário de Contato */}
-          <div className="contact-form">
-            <h3>Entre em Contato</h3>
-            <form>
-              <label htmlFor="name">Nome:</label>
-              <input type="text" id="name" name="name" required />
-
-              <label htmlFor="email">E-mail:</label>
-              <input type="email" id="email" name="email" required />
-
-              <label htmlFor="message">Mensagem:</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
-
-              <button type="submit" className="enrol-btn">Enviar</button>
-            </form>            
+          <div className="contact-info">
+            <h3>Contatos</h3>
+            <p>Email: teacher.myllenalopes@gmail.com</p>
+            <p>Telefone: (21) 98110-5778</p>
+            <p>Redes sociais: 
+            <div className="social-icons">
+             <a href="https://www.instagram.com/englishexchangebr?igsh=MXRqNmE5eTduM2ZxYw==" target="_blank" rel="noopener noreferrer">
+               <FontAwesomeIcon icon={faInstagram} size="2x" />
+             </a>
+             <a href="https://api.whatsapp.com/send?phone=5521981105778&text=Alfabetizadora+Bil%C3%ADngue+e+Professora+Particular+de+Ingl%C3%AAs%2C+online+e+presencial." target="_blank" rel="noopener noreferrer">
+               <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+             </a>
+           </div>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-content">
-          <p>&copy; 2024 English Exchange. Todos os direitos reservados.</p>
-          <div className="social-icons">
-            <a href="https://www.instagram.com/englishexchangebr?igsh=MXRqNmE5eTduM2ZxYw==" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} size="2x" />
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=5521981105778&text=Alfabetizadora+Bil%C3%ADngue+e+Professora+Particular+de+Ingl%C3%AAs%2C+online+e+presencial." target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faWhatsapp} size="2x" />
-            </a>
+      {/* Seção Footer */}     
+       <footer className="footer">
+         <div className="footer-content">
+           <p>&copy; 2024 English Exchange. Todos os direitos reservados.</p>
           </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
+       </footer>
+    </div> 
+  ); 
+} 
 
 export default App;
